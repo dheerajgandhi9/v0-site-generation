@@ -1,12 +1,21 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Star, ShoppingCart, Heart, ArrowRight, Check, Users, Shield, Truck } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import {
+  Star,
+  ShoppingCart,
+  Heart,
+  ArrowRight,
+  Check,
+  Users,
+  Shield,
+  Truck,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 const featuredProducts = [
   {
@@ -64,7 +73,7 @@ const featuredProducts = [
     reviews: 145,
     badge: "Trending",
   },
-]
+];
 
 const testimonials = [
   {
@@ -78,18 +87,20 @@ const testimonials = [
   {
     name: "Michael Chen",
     role: "Verified Customer",
-    content: "Great customer service and the return policy is very fair. Highly recommend this store to everyone.",
+    content:
+      "Great customer service and the return policy is very fair. Highly recommend this store to everyone.",
     rating: 5,
     avatar: "/placeholder.svg?height=60&width=60",
   },
   {
     name: "Emily Davis",
     role: "Verified Customer",
-    content: "The product quality exceeded my expectations. Will definitely be ordering again soon!",
+    content:
+      "The product quality exceeded my expectations. Will definitely be ordering again soon!",
     rating: 5,
     avatar: "/placeholder.svg?height=60&width=60",
   },
-]
+];
 
 export default function HomePage() {
   return (
@@ -110,18 +121,26 @@ export default function HomePage() {
                   <span className="text-slate-600"> Products</span>
                 </h1>
                 <p className="text-xl text-slate-600 leading-relaxed">
-                  Curated collection of high-quality products designed for modern living. Experience excellence in every
-                  purchase.
+                  Curated collection of high-quality products designed for
+                  modern living. Experience excellence in every purchase.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6 rounded-2xl" asChild>
+                <Button
+                  size="lg"
+                  className="text-lg px-8 py-6 rounded-2xl"
+                  asChild
+                >
                   <Link href="/products">
                     Shop Now <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-2xl bg-transparent">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-8 py-6 rounded-2xl bg-transparent"
+                >
                   View Collection
                 </Button>
               </div>
@@ -169,7 +188,9 @@ export default function HomePage() {
                 <Truck className="h-8 w-8 text-slate-600" />
               </div>
               <h3 className="text-xl font-semibold">Free Shipping</h3>
-              <p className="text-slate-600">Free shipping on orders over $100</p>
+              <p className="text-slate-600">
+                Free shipping on orders over $100
+              </p>
             </div>
             <div className="text-center space-y-4">
               <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto">
@@ -193,9 +214,12 @@ export default function HomePage() {
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">Featured Products</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+              Featured Products
+            </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Discover our most popular items, carefully selected for quality and style
+              Discover our most popular items, carefully selected for quality
+              and style
             </p>
           </div>
 
@@ -236,20 +260,28 @@ export default function HomePage() {
                           <Star
                             key={i}
                             className={`h-4 w-4 ${
-                              i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-slate-300"
+                              i < Math.floor(product.rating)
+                                ? "fill-yellow-400 text-yellow-400"
+                                : "text-slate-300"
                             }`}
                           />
                         ))}
                       </div>
-                      <span className="text-sm text-slate-600">({product.reviews})</span>
+                      <span className="text-sm text-slate-600">
+                        ({product.reviews})
+                      </span>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-2xl font-bold text-slate-900">${product.price}</span>
+                      <span className="text-2xl font-bold text-slate-900">
+                        ${product.price}
+                      </span>
                       {product.originalPrice && (
-                        <span className="text-lg text-slate-500 line-through">${product.originalPrice}</span>
+                        <span className="text-lg text-slate-500 line-through">
+                          ${product.originalPrice}
+                        </span>
                       )}
                     </div>
                     <Button className="rounded-xl" size="sm">
@@ -263,7 +295,12 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="rounded-2xl px-8 bg-transparent" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-2xl px-8 bg-transparent"
+              asChild
+            >
               <Link href="/products">View All Products</Link>
             </Button>
           </div>
@@ -274,9 +311,12 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">What Our Customers Say</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+              What Our Customers Say
+            </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Don't just take our word for it - hear from our satisfied customers
+              Don't just take our word for it - hear from our satisfied
+              customers
             </p>
           </div>
 
@@ -286,11 +326,16 @@ export default function HomePage() {
                 <CardContent className="p-8 space-y-6">
                   <div className="flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
 
-                  <p className="text-slate-700 leading-relaxed">"{testimonial.content}"</p>
+                  <p className="text-slate-700 leading-relaxed">
+                    "{testimonial.content}"
+                  </p>
 
                   <div className="flex items-center gap-4">
                     <Image
@@ -301,8 +346,12 @@ export default function HomePage() {
                       className="rounded-full"
                     />
                     <div>
-                      <h4 className="font-semibold text-slate-900">{testimonial.name}</h4>
-                      <p className="text-sm text-slate-600">{testimonial.role}</p>
+                      <h4 className="font-semibold text-slate-900">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-sm text-slate-600">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -317,9 +366,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white">Stay Updated</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white">
+                Stay Updated
+              </h2>
               <p className="text-xl text-slate-300">
-                Subscribe to our newsletter for exclusive offers and new product updates
+                Subscribe to our newsletter for exclusive offers and new product
+                updates
               </p>
             </div>
 
@@ -332,12 +384,14 @@ export default function HomePage() {
               <Button className="rounded-2xl px-8">Subscribe</Button>
             </div>
 
-            <p className="text-sm text-slate-400">No spam, unsubscribe at any time. We respect your privacy.</p>
+            <p className="text-sm text-slate-400">
+              No spam, unsubscribe at any time. We respect your privacy.
+            </p>
           </div>
         </div>
       </section>
 
       <Footer />
     </div>
-  )
+  );
 }
